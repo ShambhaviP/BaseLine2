@@ -1,15 +1,22 @@
+//Instantiating items and calculating the sales taxes applicable on them
 package com.thoughtworks.baseline;
 
-//Instantiating items and calculating the sales taxes applicable on them
 public class Item {
 
     private String name;
+    private double price;
 
-    Item(String name) {
+    Item(String name,double price) {
         this.name = name;
+        this.price = price;
     }
 
     public double basicSalesTax() {
-        return 0.0;
+        if(name.equalsIgnoreCase("chocolate")) {
+            return 0.0;
+        }
+        else {
+            return 0.1*price;
+        }
     }
 }
